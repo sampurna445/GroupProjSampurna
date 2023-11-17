@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import auth from '@react-native-firebase/auth';
+import {LocaleHelper} from '../../helpers';
 
 const Dashboard = ({navigation}) => {
   const handleLogout = async () => {
@@ -17,6 +18,7 @@ const Dashboard = ({navigation}) => {
       <Text>Welcome to Dashboard!</Text>
       <Text>Welcome, {auth().currentUser.email}</Text>
       <Button title="Logout" onPress={handleLogout} />
+      <Text>{LocaleHelper.t('howru')}</Text>
     </View>
   );
 };
