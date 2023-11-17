@@ -8,15 +8,12 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen name="Login" component={LoginScreen} />
-    //     <Stack.Screen name="Dashboard" component={Dashboard} />
-    //   </Stack.Navigator>
-    // </NavigationContainer>
-    <View>
-      <Text>Text</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
