@@ -2,12 +2,22 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {LocaleHelper} from '../../helpers';
+import {useNavigation} from '@react-navigation/native';
 
-const Dashboard = ({navigation}) => {
+const DashboardScreen = () => {
+  const navigation = useNavigation();
   const handleLogout = async () => {
     try {
-      await auth().signOut();
-      navigation.replace('Login');
+      const user = auth().currentUser;
+
+      if (user) {
+        await auth().signOut();
+        // navigation.replace('Login');
+        navigation.navigate('Login');
+      } else {
+        // Handle the case where there is no user signed in
+        console.warn('No user is currently signed in.');
+      }
     } catch (error) {
       console.error('Logout Error:', error);
     }
@@ -23,4 +33,4 @@ const Dashboard = ({navigation}) => {
   );
 };
 
-export default Dashboard;
+export default DashboardScreen;

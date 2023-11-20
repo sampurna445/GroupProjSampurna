@@ -1,4 +1,5 @@
-import Dashboard from './Dashboard';
 import LoginScreen from './LoginScreen';
+import UserProfileEdit from './UserProfileEdit';
+import DashboardScreen from './Dashboard';
 
-export {Dashboard, LoginScreen};
+export {DashboardScreen, LoginScreen, UserProfileEdit};

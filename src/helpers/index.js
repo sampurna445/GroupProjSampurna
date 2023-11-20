@@ -1,2 +1,4 @@
 import LocaleHelper from './LocaleHelper';
-export {LocaleHelper};
+import LogHelper from './LogHelper';
+
+export {LocaleHelper, LogHelper};
