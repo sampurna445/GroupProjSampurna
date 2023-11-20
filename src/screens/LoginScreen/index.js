@@ -46,31 +46,32 @@ const LoginScreen = ({navigation}) => {
     }
   };
 
-  const handleRegister = async () => {
-    if (!email || !password) {
-      Alert.alert('Error', 'Please fill in all fields');
-      return;
-    }
+  const handleRegister = () => {
+    // if (!email || !password) {
+    //   Alert.alert('Error', 'Please fill in all fields');
+    //   return;
+    // }
 
-    if (!isEmailValid(email)) {
-      Alert.alert('Error', 'Please enter a valid email address');
-      return;
-    }
+    // if (!isEmailValid(email)) {
+    //   Alert.alert('Error', 'Please enter a valid email address');
+    //   return;
+    // }
 
-    if (!isPasswordValid(password)) {
-      Alert.alert(
-        'Error',
-        'Password must be at least 6 characters and contain a number and a special character',
-      );
-      return;
-    }
+    // if (!isPasswordValid(password)) {
+    //   Alert.alert(
+    //     'Error',
+    //     'Password must be at least 6 characters and contain a number and a special character',
+    //   );
+    //   return;
+    // }
 
-    try {
-      await auth().createUserWithEmailAndPassword(email, password);
-      navigation.navigate('Dashboard');
-    } catch (error) {
-      Alert.alert('Error', error.message);
-    }
+    // try {
+    //   await auth().createUserWithEmailAndPassword(email, password);
+    //   navigation.navigate('Dashboard');
+    // } catch (error) {
+    //   Alert.alert('Error', error.message);
+    // }
+    navigation.navigate('SignUp', {navigation});
   };
 
   return (
