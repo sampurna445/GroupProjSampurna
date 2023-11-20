@@ -3,6 +3,7 @@ import {View, Text, Button} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {LocaleHelper} from '../../helpers';
 import {useNavigation} from '@react-navigation/native';
+import * as Sentry from "@sentry/react-native";
 
 const DashboardScreen = () => {
   const navigation = useNavigation();
@@ -29,8 +30,14 @@ const DashboardScreen = () => {
       <Text>Welcome, {auth().currentUser.email}</Text>
       <Button title="Logout" onPress={handleLogout} />
       <Text>{LocaleHelper.t('howru')}</Text>
+      <Button
+        title="Try!"
+        onPress={() => {
+          Sentry.captureException(new Error('First error'));
+        }}
+      />
     </View>
   );
 };
 
-export default DashboardScreen;
+export default Sentry.wrap(DashboardScreen);
