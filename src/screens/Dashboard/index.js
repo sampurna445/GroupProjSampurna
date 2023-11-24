@@ -4,6 +4,7 @@ import auth from '@react-native-firebase/auth';
 import {LocaleHelper} from '../../helpers';
 import {useNavigation} from '@react-navigation/native';
 import * as Sentry from "@sentry/react-native";
+import MapView,{Marker} from 'react-native-maps';
 
 const DashboardScreen = () => {
   const navigation = useNavigation();
